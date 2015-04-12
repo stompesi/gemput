@@ -9,8 +9,8 @@ module Gemput
 
     unless gem_info['name'].nil?
       open('Gemfile', 'a') { |f|
-        f.puts "gem '#{gem_info['name']}' '~> #{gem_info['version']}'"
-        "Add gem '#{gem_info['name']}' '~> #{gem_info['version']}'"
+        f.puts "gem '#{gem_info['name']}', '~> #{gem_info['version']}'"
+        "Add gem '#{gem_info['name']}', '~> #{gem_info['version']}'"
       }  
     else 
       "This rubygem could not be found."
