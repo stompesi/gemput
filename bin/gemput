@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'gemput'
+puts Gemput.add_gem(ARGV[0])
