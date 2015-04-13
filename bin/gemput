@@ -1,4 +1,10 @@
 #!/usr/bin/env ruby
 
 require 'gemput'
-puts Gemput.add_gem(ARGV[0])
+
+case ARGV[0]
+when "-add", "a", "-a"
+  Gemput.add_gem(ARGV[1])
+when "-sync", "s", "-s"
+  Gemput.sync_gem()
+end
