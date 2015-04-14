@@ -2,9 +2,15 @@
 
 require 'gemput'
 
-case ARGV[0]
-when "-add", "a", "-a"
-  Gemput.add_gem(ARGV[1])
-when "-sync", "s", "-s"
-  Gemput.sync_gem()
+unless ARGV[0].nil?
+  case ARGV[0]
+  when "add", "a", "-a"
+    Gemput.add_gem(ARGV[1])
+  when "sync", "s", "-s"
+    Gemput.sync_gem()
+  when "help", "h", "-h"
+    Gemput.show_help()
+  end
+else
+  Gemput.show_help()
 end
