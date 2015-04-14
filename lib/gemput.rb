@@ -47,20 +47,21 @@ module Gemput
   end
 
   def self.show_help()
-    p 'This gem is gemversion management.'
+    p 'This gem manages the version of gems in the Gemfile.'
 
-    p '# you can add gem with gem version in Gemfile.'
+    p '# you can add a gem along with its latest gem version in the Gemfile.'
     p '1-1 gemput add GEM_NAME'
     p '1-2 gemput a GEM_NAME'
     p '1-3 gemput -a GEM_NAME'
     p ''
 
-    p '# you can fill gem version in Gemfile.'
+    p '# you can fill out the missing gem versions in the Gemfile.'
     p '2-1 gemput sync'
     p '2-2 gemput s'
     p '2-3 gemput -s'
+    p ''
 
-    p '# you can see help.'
+    p '# you can view command helps.'
     p '2-1 gemput help'
     p '2-2 gemput h'
     p '2-3 gemput -h'
