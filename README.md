@@ -22,7 +22,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    # you can add a gem along with its latest gem version in the Gemfile.
+      1-1 gemput add GEM_NAME
+      1-2 gemput a GEM_NAME
+      1-3 gemput -a GEM_NAME
+      
+    # you can fill out the missing gem versions in the Gemfile.
+      2-1 gemput sync
+      2-2 gemput s
+      2-3 gemput -s
+      
+    # you can view command helps.
+      3-1 gemput help
+      3-2 gemput h
+      3-3 gemput -h
 
 ## Development
 
