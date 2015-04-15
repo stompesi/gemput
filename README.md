@@ -1,8 +1,10 @@
 # Gemput
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gemput`. To experiment with that code, run `bin/console` for an interactive prompt.
+The easiest way to manage your Gemfile. Gemput keeps your software stable by freezing Gemfile.
 
-TODO: Delete this and the text above, and describe your gem
+##[Why do you specify gem version?](http://everydayrails.com/2012/09/11/bundler-rails-specify-versions.html)
+
+> The Rails ecosystem moves quickly–too quickly, some might say–and as a result a given library’s API from just a few months ago may be deprecated today–or worse, it may just no longer work. Running bundle install with the Gemfile as-is, I could get gem versions that are no longer compatible with a legacy version of Rails. Or potentially worse, I could get gem versions with drastically rewritten APIsvery difficult to debug without a solid suite of tests. (The codebase in question lacks test coverage, too, but that’s a different subject.)
 
 ## Installation
 
@@ -20,22 +22,30 @@ Or install it yourself as:
 
     $ gem install gemput
 
-## Usage
+## Getting Started
 
-    # you can add a gem along with its latest gem version in the Gemfile.
-      1-1 gemput add GEM_NAME
-      1-2 gemput a GEM_NAME
-      1-3 gemput -a GEM_NAME
-      
-    # you can fill out the missing gem versions in the Gemfile.
-      2-1 gemput sync
-      2-2 gemput s
-      2-3 gemput -s
-      
-    # you can view command helps.
-      3-1 gemput help
-      3-2 gemput h
-      3-3 gemput -h
+Add a gem along with its latest gem version in the Gemfile.
+
+```bash
+$ gemput add GEM_NAME
+$ gemput a GEM_NAME
+$ gemput -a GEM_NAME
+```
+
+Fill out the missing gem versions in the Gemfile.
+
+```bash
+$ gemput sync
+$ gemput s
+$ gemput -s
+```
+
+View command helps.
+```bash
+$ gemput help
+$ gemput h
+$ gemput -h
+```
 
 ## Development
 
