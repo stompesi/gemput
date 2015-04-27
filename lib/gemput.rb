@@ -21,11 +21,13 @@ module Gemput
       return
     end
 
-    gem_info = Gems.info(gem_name)
+    lines = File.open(filename).to_a
+
 
     unless gem_info['name'].nil?
       open('Gemfile', 'a') { |f|
-        f.puts "gem '#{gem_info['name']}', '~> #{gem_info['version']}'"
+        f.sub(/\s+\Z/, "")
+        f.puts "\ngem '#{gem_info['name']}', '~> #{gem_info['version']}'"
         puts ''
         puts "  '#{gem_info['name']}' gem added."
         puts ''
@@ -49,7 +51,7 @@ module Gemput
     puts ''
     puts '# gem version synchronizing start.'
     read_text.each_line do |line|
-      gem_line = /^\s*gem '([^']*)'\s*$/.match(line)
+      gem_line = /^\s*gem ['"]([^']*)['"]\s*$/.match(line)
       unless gem_line.nil?
         name = gem_line.captures[0]
         gem_info = Gems.info(name)
