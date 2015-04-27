@@ -54,7 +54,7 @@ module Gemput
         name = gem_line.captures[0]
         gem_info = Gems.info(name)
         gem_version = gem_info['version']
-        write_text << line.delete!("\n") << ", '~> " << gem_version << "'\n"
+        write_text << line.sub(/\s+\Z/, "") << ", '~> " << gem_version << "'\n"
         puts "  - '#{name}' gem version added."
       else
         write_text << line
