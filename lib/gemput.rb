@@ -19,15 +19,18 @@ module Gemput
       puts '  1-3 gemput -a GEM_NAME'
       puts ''
       return
-    end
+    end 
 
-    lines = File.open(filename).to_a
-
+    gem_info = Gems.info(gem_name)
 
     unless gem_info['name'].nil?
+
+      cursor_new_line = !!(/\n$/ =~ File.open('Gemfile').to_a.last)
       open('Gemfile', 'a') { |f|
-        f.sub(/\s+\Z/, "")
-        f.puts "\ngem '#{gem_info['name']}', '~> #{gem_info['version']}'"
+        unless cursor_new_line
+          f.puts "\n"
+        end  
+        f.puts "gem '#{gem_info['name']}', '~> #{gem_info['version']}'"
         puts ''
         puts "  '#{gem_info['name']}' gem added."
         puts ''
